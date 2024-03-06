@@ -11,4 +11,5 @@
 ![WhatsApp Image 2024-02-26 at 14 13 36_0978d905](https://github.com/pritasalma/LAPORAN-SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/356aa517-50d4-405f-98ff-4d39a6cc6abf)
 ![WhatsApp Image 2024-02-26 at 14 15 29_30380543](https://github.com/pritasalma/LAPORAN-SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/c1098927-3d4f-4bc3-a6df-9cbf1bc7d203)
 ![WhatsApp Image 2024-02-26 at 14 01 29_30268b9b](https://github.com/pritasalma/LAPORAN-SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/7ef4fd86-db19-4661-87f5-920f596501f5)
+(isi program kalkutalor sederhana)
 ![WhatsApp Image 2024-02-26 at 14 09 52_61664823](https://github.com/pritasalma/LAPORAN-SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/62146ab5-8f2f-42b8-af5f-50c481585ce4)
