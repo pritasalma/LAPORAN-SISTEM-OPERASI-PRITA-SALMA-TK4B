@@ -1,7 +1,8 @@
 # JOB CONTROL
 
 
-1. Eksekusi seluruh profile yang ada :  
+1. Eksekusi seluruh profile yang ada :
+     
 a.  Edit file profile /etc/profile dan tampilkan pesan sebagai berikut :  
 
 **echo “Profile dari /etc/profile”**
@@ -109,7 +110,8 @@ Echo “Terima kasih atas sesi yang diberikan”
 
 Untuk mengedit file .bash_logout masuk sebagai user root terlebih dahulu. Lalu masukkan text edit dengan echo beserta waktu tunggu selama 5 detik (5 sleep) dan juga syntax clear yang berfungsi untuk membersikan layar saat file .bash_logout ditampilkan, untuk menampilkan file .bash_logout ubah file menjadi executable terlebih dahulu. Jika file tampil, maka ia akan memeberikan output berupa inputan text yang kita masukkan yaitu Terima kasih atas sesi yang diberikan dan layar akan dibersikan setelah 5 detik.
 
-4. Bash script  
+4. Bash script
+   
 a.  Buat 3 buah script p1.sh, p2.sh, p3.sh dengan isi masing-masing :
  
 **p1.sh**  
@@ -138,13 +140,107 @@ ps x
 
 b.  Jalankan script tersebut sebagai berikut :  
 
+Kita execute file dulu agar bisa dijalankan
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/12f6b765-be5f-4c3b-a1ab-4667b7e5d737)
+
+
 **$  ./p1.sh ; ./p3.sh ; ./p2.sh**
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/b982ca0b-5a71-4493-bf76-c6ab7dfcddb8)
 
 
 **$  ./p1.sh &**
 
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/dad049e8-c65e-4e8b-b12d-f29f37b7e6f8)
+
 
 **$  ./p1.sh $ ./p2.sh & ./p3.sh &**
 
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/d5fe7ac8-1230-4220-a0cf-ed769170b58d)
+
 
 **$  ( ./p1.sh ; ./p3.sh ) &**
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/57aa0179-bac4-42d3-830e-52e14996da1c)
+
+
+5. Jobs
+   
+a. Buat shell-script yang melakukan loop dengan nama pwaktu.sh,  setiap 10 detik, kemudian menyimpan tanggal dan jam pada file hasil.
+
+#!/bin/bash  
+while [ true ]  
+do  
+date >> hasil  
+sleep 10  
+done 
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/07bed847-89c1-4903-ac09-744884f27bc9)
+
+
+b.  Jalankan sebagai background; kemudian jalankan satu program (utilitas find) di background sebagai berikut :  
+
+**$ jobs**   
+**$ find / -print > files 2>/dev/null &**  
+**$ jobs**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/2a5cfd1e-aa78-4b9a-a285-4127ccc92dd4)
+
+
+c. Jadikan program ke 1 sebagai foreground, tekan ^Z dan kembalikan program tersebut ke 
+background 
+
+**$ fg %1**  
+**$ bg**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/dabe975d-ea2e-4397-ade2-9576a0c20bab)
+
+
+d.  Stop program background dengan utilitas kil  
+
+**$ ps x**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/daf5457c-2bc8-42fa-becc-1f2fddbfd0c0)
+
+
+**$ kill [Nomor PID]** 
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/6c525067-85a1-4afe-87f0-68b12f189aee)
+
+
+6. History
+   
+a. Ganti nilai HISTSIZE dari 1000 menjadi 20
+
+**$ HISTSIZE=20**  
+**$ h**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/3398fa53-2657-4e87-8e72-5f18e554ad7c)
+
+
+b. Gunakan fasilitas history dengan mengedit instruksi baris ke 5 dari instruksi yang terakhir dilakukan  
+
+**$ !-5**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/503ae5a0-8b48-4874-856c-f744b6a8bf92)
+
+
+c. Ulangi instruksi yang terakhir.  Gunakan juga ^P dan ^N untuk bernavigasi pada history bufer  
+
+**$ !!**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/2f027c87-4b8d-403d-ab7e-d05b966094a9)
+
+
+d.  Ulangi instruksi pada history bufer nomor 150  
+
+**$ !150**  
+
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/3ca801dd-c7b9-4104-be84-192dab9c8604)
+
+
+e.  Ulangi instruksi dengan prefix “ls”  
+
+**$ !ls**
+ 
+![image](https://github.com/pritasalma/SISTEM-OPERASI-PRITA-SALMA-TK4B/assets/126141683/74f776c2-64dc-4034-b04c-58ab064fab8d)
